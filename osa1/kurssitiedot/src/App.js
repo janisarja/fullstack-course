@@ -1,41 +1,31 @@
-
 const Header = (props) => {
   console.log(props)
-  return (
-    <>
-      <h1>{props.course}</h1>
-    </>
-  )
+  return <h1>{props.course_name}</h1>
 }
 
 const Part = (props) => {
   console.log(props)
-  return (
-    <>
-      <p>{props.part.name} {props.part.exercises}</p>
-    </>
-  )
+  return <p>{props.part.name} {props.part.exercises}</p>
 }
 
 const Content = (props) => {
   console.log(props)
   return (
-    <>
-      <Part part={props.parts[0]} />
-      <Part part={props.parts[1]} />
-      <Part part={props.parts[2]} />
-    </>
+    <div>
+      <Part part={props.parts[0]}/>
+      <Part part={props.parts[1]}/>
+      <Part part={props.parts[2]}/>
+    </div>
   )
 }
 
 const Total = (props) => {
   console.log(props)
   return (
-    <>
-      <p>Number of exercises {props.parts[0].exercises +
-                              props.parts[1].exercises +
-                              props.parts[2].exercises}</p>
-    </>
+  <p>
+    Number of exercises {props.parts[0].exercises + 
+    props.parts[1].exercises + props.parts[2].exercises}
+  </p>
   )
 }
 
@@ -59,12 +49,12 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <Header course={course.name}/>
-      <Content parts={course.parts} />
-      <Total parts={course.parts} />
+    <div>
+      <Header course_name={course.name}/>
+      <Content parts={course.parts}/>
+      <Total parts={course.parts}/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
