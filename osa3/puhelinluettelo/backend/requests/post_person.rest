@@ -1,7 +1,7 @@
-POST http://localhost:3001/api/persons
+POST https://puhelinluettelo-u3gl.onrender.com/api/persons
 Content-Type: application/json
 
 {
-  "name": "Jani Sarja",
+  "name": "Jani",
   "number": "040-1234567"
 }
