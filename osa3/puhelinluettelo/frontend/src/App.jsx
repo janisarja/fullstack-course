@@ -46,6 +46,13 @@ const App = () => {
           setNewName('')
           setNewNumber('')
         })
+        .catch(error => {
+          setSuccess(false)
+          setNotification(error.response.data.error)
+          setTimeout(() => {
+            setNotification(null)
+          }, 5000)
+        })
     }
     else {
       if ( window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`) ) {
@@ -64,9 +71,7 @@ const App = () => {
           })
           .catch(error => {
             setSuccess(false)
-            setNotification(
-              `Information of ${newName} has already been removed from the server`
-            )
+            setNotification(error.response.data.error)
             setTimeout(() => {
               setNotification(null)
             }, 5000)

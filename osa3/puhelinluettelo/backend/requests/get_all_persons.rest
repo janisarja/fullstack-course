@@ -1,1 +1,1 @@
-GET https://puhelinluettelo-u3gl.onrender.com/api/persons
+GET https://localhost:3001/api/persons
